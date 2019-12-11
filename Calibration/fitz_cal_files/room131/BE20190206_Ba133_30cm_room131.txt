@@ -1,0 +1,43 @@
+
+                       be used for evaluation purposes
+                                                            29-Mar-2019 11:51
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: BE20190206_Ba133_30cm_room131.Ch 
+ Sample Title :                                                  
+
+ Spectrum saved on  6-Feb-2019 at  5:56    Collected on  6-Feb-2019 at 11:06
+ Sample  Taken  on  6-Feb-2019 at 11:06    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     7
+            Energy     Calibration Performed on  8-Mar-2019 at 12:07
+            Peak Shape Calibration Performed on  8-Mar-2019 at 12:08
+
+ 
+
+   Datetime:   6-Feb-2019  11:06
+   Live:      10121.0 
+   Mass:      
+   Shelf:     
+   Detector:      7
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+                                                                                                     
+              
+
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   53.1   282.6   0.86    31.3    0.95     10463    3.5   1.0338e+00    3.5     7535
+   81.0   431.1   0.92   133.5    0.54    163890    1.0   1.6193e+01    1.0     7849
+  160.7   855.5   1.03    11.8    0.45      2647    9.0   2.6151e-01    9.0     5860
+  223.3  1189.1   1.12     8.2    0.39      1576   12.1   1.5569e-01   12.1     3946
+  276.5  1472.5   1.19    48.8    0.99     20895    1.5   2.0645e+00    1.5     2008
+  303.0  1613.4   1.22    75.9    1.53     49521    1.0   4.8929e+00    1.0     1578
+  356.1  1896.6   1.28   132.9    4.12    147497    0.7   1.4573e+01    0.7      434
+  384.0  2044.9   1.33    50.5    0.78     20163    1.2   1.9922e+00    1.2      247

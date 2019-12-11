@@ -1,0 +1,50 @@
+
+                       be used for evaluation purposes
+                                                            21-Mar-2019 12:05
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: BO02272019_Cu07_5cm_room131.Chn  
+ Sample Title :          Cu07
+
+ Spectrum saved on 27-Feb-2019 at 10:36    Collected on 27-Feb-2019 at  9:58
+ Sample  Taken  on 27-Feb-2019 at  9:58    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     7
+            Energy     Calibration Performed on  8-Mar-2019 at 12:07
+            Peak Shape Calibration Performed on  8-Mar-2019 at 12:08
+
+ 
+
+   Datetime:  27-Feb-2019   9:58
+   Live:      2095.00 
+   Mass:      729
+   Shelf:     5
+   Detector:      7
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+                                                                                                     
+              
+
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   63.3   336.6   0.96     7.6    0.53      2813   14.8   1.3429e+00   14.8    16168
+   64.9   345.3   0.96    12.9    0.53      5278    8.6   2.5195e+00    8.6    17964
+   72.8   387.7   1.02    21.9    1.06     12074    7.9   5.7631e+00    7.9    18156
+   75.0   399.0   1.02    35.3    1.06     20337    4.8   9.7075e+00    4.8    18156
+   84.8   451.4   1.15    12.3    1.17      8950    5.6   4.2722e+00    5.6    17727
+   87.3   464.9   1.16     4.9    1.17      2712   16.3   1.2946e+00   16.3    19339
+  511.2  2722.7   2.91   141.3   65.80   1706209    0.6   8.1442e+02    0.6    66072
+  539.1  2871.2   1.49     3.4    0.87       309   42.7   1.4755e-01   42.7     1637
+ 1115.9  5943.3   2.22    65.0    1.75     40131    1.2   1.9155e+01    1.2      358
+ 1123.3  5982.8   2.23     3.4    1.75       146   56.8   6.9923e-02   56.8      358
+ 1174.0  6253.0   2.24     3.5    1.17        94   56.3   4.4930e-02   56.3      200
+ 1333.2  7101.0   2.43     3.5    0.97        96   30.8   4.5993e-02   30.8       38
+ 1346.2  7170.0   2.46    35.3    1.39     10726    1.8   5.1198e+00    1.8       29
+
+   indicates the Iterative Peak Width fitting reached a limiting value.

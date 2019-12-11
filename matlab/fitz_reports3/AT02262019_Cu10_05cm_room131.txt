@@ -1,0 +1,43 @@
+
+                       be used for evaluation purposes
+                                                            20-Mar-2019 14:33
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: AT02262019_Cu10_05cm_room131.Chn 
+ Sample Title :          Cu10
+
+ Spectrum saved on 26-Feb-2019 at  2:50    Collected on 26-Feb-2019 at  2:44
+ Sample  Taken  on 26-Feb-2019 at  2:44    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     7
+            Energy     Calibration Performed on  8-Mar-2019 at 12:07
+            Peak Shape Calibration Performed on  8-Mar-2019 at 12:08
+
+ 
+
+   Datetime:  26-Feb-2019   2:44
+   Live:       273.00 
+   Mass:       1029
+   Shelf:      05
+   Detector:      7
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+                                                                                                     
+              
+
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   72.7   387.1   1.07    13.2    0.76      4242    6.9   1.5538e+01    6.9     6794
+   74.9   398.7   1.07    19.0    0.76      7359    4.2   2.6954e+01    4.2     7473
+   84.8   451.2   0.96     9.1    1.52      2626   15.0   9.6196e+00   15.0     6620
+   87.4   465.2   0.96     5.8    1.52       752   51.8   2.7551e+00   51.8     6620
+  511.2  2722.6   2.80    86.3    9.26    648312    0.7   2.3748e+03    0.7    45695
+ 1021.2  5439.1   2.06     3.4    1.57       337   24.1   1.2354e+00   24.1      389
+ 1346.2  7170.1   2.55    20.5    1.22      3896    3.2   1.4273e+01    3.2       36
+ 1369.4  7294.0   2.47     3.4    0.68        38   55.6   1.4003e-01   55.6       23

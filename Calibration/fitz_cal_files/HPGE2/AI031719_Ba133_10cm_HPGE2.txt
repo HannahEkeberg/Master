@@ -1,0 +1,43 @@
+
+                       be used for evaluation purposes
+                                                            29-Mar-2019 13:40
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: AI031719_Ba133_10cm_HPGE2.Chn    
+ Sample Title :                                                  
+
+ Spectrum saved on 17-Mar-2019 at 21:30    Collected on 17-Mar-2019 at 21:01
+ Sample  Taken  on 17-Mar-2019 at 21:01    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     2
+            Energy     Calibration Performed on  8-Mar-2019 at 11:34
+            Peak Shape Calibration Performed on  8-Mar-2019 at 11:35
+
+ 
+
+   Datetime:  17-Mar-2019  21:01
+   Live:      1633.00 
+   Mass:      
+   Shelf:     
+   Detector:      2
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+                                                                                                     
+              
+
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   53.2   290.0   1.08    29.7    0.57      9956    3.5   6.0967e+00    3.5     6526
+   81.0   442.1   1.18   155.6  117.93    241360    1.1   1.4780e+02    1.1    11349
+  160.7   878.2   1.15    16.0    1.01      4705    7.0   2.8811e+00    7.0     8792
+  223.4  1221.2   1.27    11.6    0.98      2352    8.3   1.4402e+00    8.3     3245
+  276.6  1512.5   1.30    58.4    1.35     30546    1.2   1.8705e+01    1.2     1578
+  303.0  1657.1   1.32    91.7    1.24     71336    0.7   4.3684e+01    0.7     1651
+  356.1  1947.8   1.36   160.5    2.09    206811    0.4   1.2664e+02    0.4     1852
+  383.9  2100.0   1.38    55.6    1.53     28140    1.2   1.7232e+01    1.2      527

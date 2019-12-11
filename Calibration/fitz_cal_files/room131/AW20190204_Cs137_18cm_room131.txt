@@ -1,0 +1,38 @@
+
+                       be used for evaluation purposes
+                                                            29-Mar-2019 11:41
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: AW20190204_Cs137_18cm_room131.Ch 
+ Sample Title :                                                  
+
+ Spectrum saved on  4-Feb-2019 at  3:47    Collected on  4-Feb-2019 at 11:42
+ Sample  Taken  on  4-Feb-2019 at 11:42    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     7
+            Energy     Calibration Performed on  8-Mar-2019 at 12:07
+            Peak Shape Calibration Performed on  8-Mar-2019 at 12:08
+
+ 
+
+   Datetime:   4-Feb-2019  11:42
+   Live:       233.00 
+   Mass:      
+   Shelf:     
+   Detector:      7
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+                                                                                                     
+              
+
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   31.9   169.6   0.98    13.3    0.51      2136    4.9   9.1683e+00    4.9      372
+   36.3   193.2   0.90     6.2    1.93       440   14.8   1.8874e+00   14.8      170
+  661.3  3522.1   1.63    35.7    1.43     10071    1.8   4.3223e+01    1.8       -0
