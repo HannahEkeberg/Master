@@ -179,7 +179,7 @@ def single_decay_data(func, reaction, n, Save_csv=False):  #function, string
     list, lambda_ = func
     A0 = np.zeros(n); sigma_A0 = np.zeros(n)
     for i,e in enumerate(list):
-        A0_estimated, sigma_A0_estimated = A0_single_decay(e, lambda_)
+        A0_estimated, sigma_A0_estimated = A0_single_decay(e, lambda_, makePlot=True)
         A0[i] = A0_estimated; sigma_A0[i] = sigma_A0_estimated
         if Save_csv == True:
             save_results_to = os.getcwd()+'/activity_csv/'
@@ -226,14 +226,117 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 
 
-
 #single_decay_data(Cu_62Zn(), "Cu_62Zn", 10, Save_csv=True)
 #single_decay_data(Cu_63Zn(), "Cu_63Zn", 10, Save_csv=True)
 #single_decay_data(Cu_65Zn(), "Cu_65Zn", 10, Save_csv=True)
 #single_decay_data(Ni_57Co(), "Ni_57Co", 10, Save_csv=True)
 #single_decay_data(Ni_61Cu(), "Ni_61Cu", 10, Save_csv=True)
 #single_decay_data(Cu_65Zn(), "Cu_65Zn", 10, Save_csv=True)
-two_step_kp_data(Ni_56Ni(), Ni_56Co(), "Ni_56Co", 10, Save_csv= True)
-two_step_up_data(Ni_58Co(), "Ni_58mCo", "Ni_58Co", 10, Save_csv = True)
-#two_step_up_data(Cu_52Mn(), "Cu_52mMn", "Ni_52Mn", 10)
+#two_step_kp_data(Ni_56Ni(), Ni_56Co(), "Ni_56Co", 10, Save_csv= True)
+#two_step_up_data(Ni_58Co(), "Ni_58mCo", "Ni_58Co", 10, Save_csv = True)
+#two_step_up_data(Cu_52Mn(), "Cu_52mMn", "Cu_52Mn", 10, Save_csv = True)
 #single_decay_data(Fe_56Co(), "Fe_56Co", 3, Save_csv=True)
+
+
+###Cu
+#two_step_up_data(Cu_56Co(), "Cu_56Ni", "Cu_56Co", 10, Save_csv = True)
+
+#single_decay_data(Cu_56Co(), "Cu_56Co", 10, Save_csv=True)
+
+
+#single_decay_data(Cu_57Ni(), "Cu_57Ni", 10, Save_csv=True)
+
+#two_step_up_data(Cu_58Co(), "Cu_58mCo", "Cu_58Co", 10, Save_csv = True)     #WEIRD
+
+
+#single_decay_data(Cu_59Fe(), "Cu_59Fe", 10, Save_csv=True)      #OK
+
+#two_step_up_data(Cu_60Co(), "Cu_60mCo", "Cu_60Co", 10, Save_csv = True)   #WEIRD
+
+#two_step_up_data(Cu_61Co(), "Cu_61Fe", "Cu_61Co", 10, Save_csv = True)   #OK
+
+#single_decay_data(Cu_61Cu(), "Cu_61Cu", 10, Save_csv=True)      #some weird values
+
+#single_decay_data(Cu_64Cu(), "Cu_64Cu", 10, Save_csv=True)      #EXCELLENT
+
+#single_decay_data(Cu_65Ni(), "Cu_65Ni", 10, Save_csv=True)      #EXCELLENT
+
+
+### Ni
+#single_decay_data(Ni_56Ni(), "Ni_56Ni", 10, Save_csv=True)      #EXCELLENT
+
+#single_decay_data(Ni_57Ni(), "Ni_57Ni", 10, Save_csv=True)      #EXCELLENT
+
+#two_step_kp_data(Ni_57Ni(), Ni_57Co(), "Ni_57Co", 10, Save_csv= True)    #WEIRD
+
+
+#single_decay_data(Ni_55Co(), "Ni_55Co", 10, Save_csv=True)      #EXCELLENT
+
+
+#single_decay_data(Ni_52mMn(), "Ni_52mMn", 10, Save_csv=True)      #WEIRD
+
+
+#two_step_kp_data(Ni_52mMn(), Ni_52Mn(), "Ni_52Mn", 10, Save_csv= True)    #NOT WORKING
+
+#single_decay_data(Ni_54Mn(), "Ni_54Mn", 10, Save_csv=True)      #EXCELLENT
+
+# single_decay_data(Ni_59Fe(), "Ni_59Fe", 10, Save_csv=True)      #only produced in foil1
+
+#single_decay_data(Ni_60Cu(), "Ni_60Cu", 10, Save_csv=True)      #EXCELLENT
+
+#single_decay_data(Ni_60mCo(), "Ni_60mCo", 10, Save_csv=True)      #not produced?
+
+#single_decay_data(Ni_64Cu(), "Ni_64Cu", 10, Save_csv=True)     #not produced?
+
+#single_decay_data(Ni_64Cu(), "Ni_65Ni", 10, Save_csv=True)     #not produced?
+
+###Fe
+
+#single_decay_data(Fe_48V(), "Fe_48V", 3, Save_csv=True)     #EXCELLENT, but could not save fig..
+#single_decay_data(Fe_51Mn(), "Fe_51Mn", 3, Save_csv=True)     # not produced?
+#single_decay_data(Fe_51Cr(), "Fe_51Cr", 3, Save_csv=True)     #EXCELLENT
+
+#single_decay_data(Fe_52mMn(), "Fe_52mMn", 3, Save_csv=True)     #not produced?
+#single_decay_data(Fe_52Mn(), "Fe_52Mn", 3, Save_csv=True)     #EXCELLENT
+#single_decay_data(Fe_53Fe(), "Fe_53Fe", 3, Save_csv=True)     #EXCELLENT
+
+#single_decay_data(Fe_54Mn(), "Fe_54Mn", 3, Save_csv=True)     #EXCELLENT
+#single_decay_data(Fe_55Co(), "Fe_55Co", 3, Save_csv=True)     #EXCELLENT
+
+#single_decay_data(Fe_57Co(), "Fe_57Co", 3, Save_csv=True)     #EXCELLENT
+#single_decay_data(Fe_58Co(), "Fe_58Co", 3, Save_csv=True)     #EXCELLENT
+
+#single_decay_data(Fe_59Fe(), "Fe_59Fe", 3, Save_csv=True)     #EXCELLENT
+
+
+
+###Ir
+
+#single_decay_data(Ir_183Ta(), "Ir_183Ta", 10, Save_csv=True)    #183Hf was produced!!!!!. Not correct then
+#single_decay_data(Ir_186Ta(), "Ir_186Ta", 10, Save_csv=True)     #WEIRD LOOKING
+#single_decay_data(Ir_186Re(), "Ir_186Re", 10, Save_csv=True)    #seems ok
+#single_decay_data(Ir_187W(), "Ir_187W", 10, Save_csv=True)    # kind of weird looking?
+
+#single_decay_data(Ir_188Pt(), "Ir_188Pt", 10, Save_csv=True)    #commented out false peaks
+#two_step_kp_data(Ir_188Pt(), Ir_188Ir(), "Ir_188Ir", 10, Save_csv= True)   #ok
+
+# single_decay_data(Ir_188mRe(), "Ir_188mRe", 10, Save_csv=True)    #WEIRD, prob not produced?
+#single_decay_data(Ir_188Re(), "Ir_188Re", 10, Save_csv=True)    #ok
+
+#single_decay_data(Ir_189Pt(), "Ir_189Pt", 10, Save_csv=True)    #EXCELLENT
+#two_step_kp_data(Ir_189Pt(), Ir_189Ir(), "Ir_189Ir", 10, Save_csv= True)   #WEIRD  prob not in foil 4 and out if even produced
+
+#single_decay_data(Ir_189W(), "Ir_189W", 10, Save_csv=True)    #Prob not oberved
+#single_decay_data(Ir_189Re(), "Ir_189Re", 10, Save_csv=True)    #two gamma lines, does not agree
+#single_decay_data(Ir_190mRe(), "Ir_190mRe", 10, Save_csv=True)    #prob not observed?
+#single_decay_data(Ir_190Re(), "Ir_190Re", 10, Save_csv=True)    #must go through false peaks
+
+#single_decay_data(Ir_191Pt(), "Ir_191Pt", 10, Save_csv=True)    #two gamma lines, does not agree
+#single_decay_data(Ir_192Ir(), "Ir_192Ir", 10, Save_csv=True)    #must go through false peaks
+#single_decay_data(Ir_193mPt(), "Ir_193mPt", 10, Save_csv=True)    #EXCELLENT
+#single_decay_data(Ir_194m2Ir(), "Ir_194m2Ir", 10, Save_csv=True)    #ok, must go through false peaks
+
+two_step_kp_data(Ir_194m2Ir(), Ir_194Ir(), "Ir_194Ir", 10, Save_csv= True)   #Ok, must go through false peaks
+
+
+#HH
