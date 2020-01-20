@@ -29,8 +29,15 @@ def getA0(filename, n):# n=numb of foils. Get activity from csv to either foil f
         sigma_A0_array[i] = A0[1]
     return(A0_array, sigma_A0_array)
 
+def Ir_foil():
+    n=10
+    mol_mass_Ir = 192.217 #g/mol
+    mass_density = np.array((55.174, 55.601, 55.643, 56.000, 55.161, 55.731, 56.685, 58.030, 56.669, 55.065))/1e3
+    sigma_mass_density = np.array((0.053, 0.238, 0.121, 0.109, 0.081, 0.088, 0.085, 0.130, 0.043, 0.055))/1e3
+    mass_density = (mass_density*N_A)/mol_mass_Ir #nuclei/cm^2
+    sigma_mass_density = (sigma_mass_density*N_A)/mol_mass_Ir
 
-
+    return mass_density, sigma_mass_density
 
 
 def Fe_foil(react): # returns A0, sigma_A0, lambda
@@ -62,20 +69,34 @@ def Ni_foil(react):
         A0, sigma_A0 = getA0(A_file, n)
         lambda_ = Ni_61Cu()[-1]   #from foil_info.py
         IAEA_Cs = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/monitor_data_files/nid61cut/nid61cut.txt'
+        return IAEA_Cs, A0, sigma_A0, lambda_, mass_density, sigma_mass_density
 
     elif react == 'Ni_56Co':
         A_file = path + 'Ni_56Co.csv'
-        A0, sigma_A0 = getA0(A_file, n)
-        lambda_ = Ni_56Co()[-1]   #from foil_info.py
+        A_56Ni_file = path + 'Ni_56Ni.csv'
+        A0_56Co, sigma_A0_56Co = getA0(A_file, n)
+        A0_56Ni, sigma_A0_56Ni = getA0(A_56Ni_file, n)
+
+
+        lambda_56Co = Ni_56Co()[-1]   #from foil_info.py
+        lambda_56Ni = Ni_56Ni()[-1]
         IAEA_Cs = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/monitor_data_files/nid56cot/nid56cot.txt'
 
-    elif react == 'Ni_58Co':
-        A_file = path + 'Ni_58Co.csv'
-        A0, sigma_A0 = getA0(A_file, n)
-        lambda_ = Ni_58Co()[-1]   #from foil_info.py
-        IAEA_Cs = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/monitor_data_files/nid58cot/nid58cot.txt'
+        return IAEA_Cs, A0_56Co, sigma_A0_56Co, A0_56Ni, sigma_A0_56Ni, lambda_56Co, lambda_56Ni, mass_density, sigma_mass_density
 
-    return IAEA_Cs, A0, sigma_A0, lambda_, mass_density, sigma_mass_density
+    elif react == 'Ni_58Co':
+        ###Cumulative cross section from IAEA
+        A_file = path + 'Ni_58Co.csv'
+        A_58mCo_file = path + 'Ni_58mCo.csv'
+        A0_58Co, sigma_A0_58Co = getA0(A_file, n)
+        A0_58mCo, sigma_A0_58mCo = getA0(A_58mCo_file, n)
+
+        lambda_58Co = Ni_58Co()[-1]   #from foil_info.py
+        lambda_58mCo = Ni_58Co()[1]   # Isomer decay with no gammas, 58mCo activities are calculated in Ni_58Co
+        IAEA_Cs = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/monitor_data_files/nid58cot/nid58cot.txt'
+        return IAEA_Cs, A0_58Co, sigma_A0_58Co, A0_58mCo, sigma_A0_58mCo, lambda_58Co, lambda_58mCo, mass_density, sigma_mass_density
+
+
 
 def Cu_foil(react):
     n = 10
@@ -105,5 +126,3 @@ def Cu_foil(react):
         IAEA_Cs = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/monitor_data_files/cud65znt/cud65znt.txt'
 
     return IAEA_Cs, A0, sigma_A0, lambda_, mass_density, sigma_mass_density
-
-    
