@@ -23,9 +23,10 @@ All info should be in reaction functions, ie Cu_62Zn, however, guesses are assig
 ####FUNCTIONS
 
 def A0_single_decay(filename_activity_time, lambda_, makePlot=False):
-    ID = filename_activity_time[-8:-4]
-    Nucleus = filename_activity_time[-12:-8]
-    print('foil{}_{}'.format(ID, Nucleus))
+    #ID = filename_activity_time[-8:-4]
+    #Nucleus = filename_activity_time[-12:-8]
+    name = filename_activity_time[-13:-4]
+    #print('foil{}_{}'.format(ID, Nucleus))
     time = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[0]) #hours since e.o.b
     A = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[1])
     sigma_A = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[2])
@@ -58,12 +59,19 @@ def A0_single_decay(filename_activity_time, lambda_, makePlot=False):
         plt.plot(xplot,direct_decay(xplot*3600,*(popt-sigma_activity_estimated)), color='green', linewidth=0.4)
         plt.plot(time[index],A[index], '.')
         plt.errorbar(time[index], A[index], color='green', linewidth=0.001,yerr=sigma_A[index], elinewidth=0.5, ecolor='k', capthick=0.5)   # cap thickness for error bar color='blue')
-        plt.title('Activity for foil {} nucleus {}'.format(ID, Nucleus) )
+        #plt.title('Activity for foil {} nucleus {}'.format(ID, Nucleus) )
         plt.xlabel('time since eob, hours')
         plt.ylabel('Activity, Bq')
-        save_results_to = os.getcwd()+'/activity_curves/'
+        save_curves_to = os.getcwd()+'/activity_curves/'
+        #save_csv_to = os.getcwd()+'/activity_csv/'
         #np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
-        plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
+        #plt.savefig('{}.png'.format(save_curves_to, name), dpi=300)
+        if name[0]=='/':
+            print(name[1:])
+            name = name[1:]
+        #print(name)
+        plt.title('Activity for {}'.format(name) )
+        plt.savefig(save_curves_to + '_activity_{}.png'.format(name), dpi=300)
         plt.show()
 
 
@@ -114,8 +122,8 @@ def A0_double_decay_unknown_parent(filename_activity_time, lambda_parent, lambda
         plt.xlabel('time since eob, hours')
         plt.ylabel('Activity, Bq')
         save_results_to = os.getcwd()+'/activity_curves/'
-        #np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
-        plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
+        np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
+        #plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
         #plt.savefig('foil_{}_{}'.format(Nucleus, ID), dpi=300)
         plt.show()
 
@@ -169,7 +177,6 @@ def A0_double_decay_known_parent(filename_activity_time, A0_parent, lambda_paren
         plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
         plt.show()
 
-    #return (A0_estimated)
     return A0_estimated, sigma_A0_estimated
 
 
@@ -184,8 +191,8 @@ def single_decay_data(func, reaction, n, Save_csv=False):  #function, string
         if Save_csv == True:
             save_results_to = os.getcwd()+'/activity_csv/'
             np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
-        print("A0: {}, sigmaA0: {}".format(A0_estimated, sigma_A0_estimated))
-        print("*****************************************")
+        #print("A0: {}, sigmaA0: {}".format(A0_estimated, sigma_A0_estimated))
+        #print("*****************************************")
 def two_step_kp_data(func_parent, func_daughter, reaction, n, Save_csv=False):
     list_parent, lambda_parent = func_parent
     A0 = np.zeros(n); sigma_A0 = np.zeros(n)
@@ -202,7 +209,7 @@ def two_step_kp_data(func_parent, func_daughter, reaction, n, Save_csv=False):
             np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
         #print("A0: {}, sigmaA0: {}".format(A0_estimated_daughter, sigma_A0_estimated_daughter))
         #print("*****************************************")
-    print(A0)
+    #print(A0)
 def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False):
     list, lambda_parent, lambda_daughter = func
     A0_parent = np.zeros(n); sigma_A0_parent = np.zeros(n)
@@ -219,9 +226,9 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
             np.savetxt("{}.csv".format(save_results_to +  reaction_daughter), np.array((A0_daughter, sigma_A0_daughter)), delimiter=",")
             #np.savetxt("{}.csv".format(reaction_parent), np.array((A0_parent, sigma_A0_parent)), delimiter=",")
             #np.savetxt("{}.csv".format(reaction_daughter), np.array((A0_daughter, sigma_A0_daughter)), delimiter=",")
-        print("Isomer -  A0: {}, sigma A0: {}".format(A0_estimated_parent, sigma_A0_estimated_parent))
-        print("Ground state -  A0: {}, sigma A0: {}".format(A0_estimated_daughter, sigma_A0_estimated_daughter))
-        print("***************************************")
+        #print("Isomer -  A0: {}, sigma A0: {}".format(A0_estimated_parent, sigma_A0_estimated_parent))
+        #print("Ground state -  A0: {}, sigma A0: {}".format(A0_estimated_daughter, sigma_A0_estimated_daughter))
+        #print("***************************************")
 
 
 
@@ -336,7 +343,7 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 #single_decay_data(Ir_193mPt(), "Ir_193mPt", 10, Save_csv=True)    #EXCELLENT
 #single_decay_data(Ir_194m2Ir(), "Ir_194m2Ir", 10, Save_csv=True)    #ok, must go through false peaks
 
-two_step_kp_data(Ir_194m2Ir(), Ir_194Ir(), "Ir_194Ir", 10, Save_csv= True)   #Ok, must go through false peaks
+#two_step_kp_data(Ir_194m2Ir(), Ir_194Ir(), "Ir_194Ir", 10, Save_csv= True)   #Ok, must go through false peaks
 
 
 #HH
